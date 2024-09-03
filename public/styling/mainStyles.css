@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+*:focus {
+    outline: 2px solid var(--outline-color);
+}
+.hidden {
+    display: none !important;
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+ul, p {
+    margin: 0;
+}
+a:hover{
+    text-decoration: none;
+    color: var(--text-color);
+}
+button {
+    background-color: var(--button-color);
+    border: none;
+}
+:root,
+    :root.default {
+        --text-color: #FFFFFF;
+        --text-color-dark: #000000;
+        --shadow-color: rgba(0, 0, 0, 0.8);
+        --outline-color: magenta;
+}
+
+#slotSelector {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "left results right"
+    "left results right"
+    ". center .";
+    width: 350px;
+}
+#characterGrid_left {
+    grid-area: left;
+}
+#results {
+    grid-area: results;
+}
+#characterGrid_center {
+    flex-direction: row;
+    grid-area: center;
+}
+#characterGrid_right {
+    grid-area: right;
+}
+
+.centerItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
