@@ -13,136 +13,140 @@
         <input type="search">
     </header>
     <main>
-        <section id="slotSelector">
-            <ul class="centerItems" id="characterGrid_left">
-                <li>
-                    <select class="itemSlot head" name="head" id="head">
-                        <optgroup label="Head">
-                        <option value="cloth_helm">Cloth</option>
-                        <option value="leather_helm">Leather</option>
-                        <option value="mail_helm">Mail</option>
-                        <option value="plate_helm">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot neck" name="neck" id="neck">
-                        <optgroup label="Necks">
-                        <option value="neck">Neck</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot shoulder" name="shoulder" id="shoulder">
-                        <optgroup label="Shoulders">
-                        <option value="cloth_shoulder">Cloth</option>
-                        <option value="leather_shoulder">Leather</option>
-                        <option value="mail_shoulder">Mail</option>
-                        <option value="plate_shoulder">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot cloak" name="cloak" id="cloak">
-                        <optgroup label="Cloaks">
-                        <option value="cloak">Cloak</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot chest" name="chest" id="chest">
-                        <optgroup label="Chest">
-                        <option value="cloth_chest">Cloth</option>
-                        <option value="leather_chest">Leather</option>
-                        <option value="mail_chest">Mail</option>
-                        <option value="plate_chest">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot wrists" name="wrists" id="wrists">
-                        <optgroup label="Wrists">
-                        <option value="cloth_wrists">Cloth</option>
-                        <option value="leather_wrists">Leather</option>
-                        <option value="mail_wrists">Mail</option>
-                        <option value="plate_wrists">Plate</option>
-                    </select>
-                </li>
-            </ul>
-            <ul class="centerItems" id="results">
-                <li></li>
-            </ul>
-            <ul class="centerItems" id="characterGrid_right">
-                <li>
-                    <select class="itemSlot hands" name="hands" id="hands">
-                        <optgroup label="Hands">
-                        <option value="cloth_hands">Cloth</option>
-                        <option value="leather_hands">Leather</option>
-                        <option value="mail_hands">Mail</option>
-                        <option value="plate_hands">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot belt" name="belt" id="belt">
-                        <optgroup label="Belt">
-                        <option value="cloth_belt">Cloth</option>
-                        <option value="leather_belt">Leather</option>
-                        <option value="mail_belt">Mail</option>
-                        <option value="plate_belt">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot legs" name="legs" id="legs">
-                        <optgroup label="Legs">
-                        <option value="cloth_legs">Cloth</option>
-                        <option value="leather_legs">Leather</option>
-                        <option value="mail_legs">Mail</option>
-                        <option value="plate_legs">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot feet" name="feet" id="feet">
-                        <optgroup label="Feet">
-                        <option value="cloth_feet">Cloth</option>
-                        <option value="leather_feet">Leather</option>
-                        <option value="mail_feet">Mail</option>
-                        <option value="plate_feet">Plate</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot ring" name="ring" id="ring">
-                        <optgroup label="Rings">
-                        <option value="ring">Ring</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot trinket" name="trinket" id="trinket">
-                        <optgroup label="Trinkets">
-                        <option value="trinket">Trinket</option>
-                    </select>
-                </li>
-            </ul>
-            <ul class="centerItems" id="characterGrid_center">
-                <li>
-                    <select class="itemSlot mainHand" name="mainHand" id="mainHand">
-                        <optgroup label="One Handers">
-                            <option value="1hsword">Sword</option>
-                            <option value="1hmace">Mace</option>
-                            <option value="1haxe">Axe</option>
-                            <option value="1hwarglaive">Warglaive</option>
-                            <option value="1hdagger">Dagger</option>
-                            <option value="1hwand">Wand</option>
-                        <optgroup label="Two Handers">
-                            <option value="2hsword">Sword</option>
-                            <option value="2hmace">Mace</option>
-                            <option value="2haxe">Axe</option>
-                            <option value="2hpolearm">Polearm</option>
-                            <option value="2hstaff">Staff</option>
-                    </select>
-                </li>
-                <li>
-                    <select class="itemSlot offHand" name="offHand" id="offHand">
-                        <optgroup label="Off Hands">
-                        <option value="shield">Shield</option>
-                        <option value="heldinoff">Held in Offhand</option>
-                    </select>
-                </li>
-            </ul>
+        <h1>WhoCanCraft</h1>
+        <section id="characterItemSlots">
+            <h2>Choose an item you wish to find a crafter for!</h2>
+            <nav id="slotSelector">
+                <ul class="centerItems" id="characterGrid_left">
+                    <li>
+                        <select class="itemSlot head" name="head" id="head">
+                            <optgroup label="Head">
+                            <option value="cloth_helm">Cloth</option>
+                            <option value="leather_helm">Leather</option>
+                            <option value="mail_helm">Mail</option>
+                            <option value="plate_helm">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot neck" name="neck" id="neck">
+                            <optgroup label="Necks">
+                            <option value="neck">Neck</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot shoulder" name="shoulder" id="shoulder">
+                            <optgroup label="Shoulders">
+                            <option value="cloth_shoulder">Cloth</option>
+                            <option value="leather_shoulder">Leather</option>
+                            <option value="mail_shoulder">Mail</option>
+                            <option value="plate_shoulder">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot cloak" name="cloak" id="cloak">
+                            <optgroup label="Cloaks">
+                            <option value="cloak">Cloak</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot chest" name="chest" id="chest">
+                            <optgroup label="Chest">
+                            <option value="cloth_chest">Cloth</option>
+                            <option value="leather_chest">Leather</option>
+                            <option value="mail_chest">Mail</option>
+                            <option value="plate_chest">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot wrists" name="wrists" id="wrists">
+                            <optgroup label="Wrists">
+                            <option value="cloth_wrists">Cloth</option>
+                            <option value="leather_wrists">Leather</option>
+                            <option value="mail_wrists">Mail</option>
+                            <option value="plate_wrists">Plate</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="centerItems" id="characterGrid_center">
+                    <li>
+                        <select class="itemSlot mainHand" name="mainHand" id="mainHand">
+                            <optgroup label="One Handers">
+                                <option value="1hsword">Sword</option>
+                                <option value="1hmace">Mace</option>
+                                <option value="1haxe">Axe</option>
+                                <option value="1hwarglaive">Warglaive</option>
+                                <option value="1hdagger">Dagger</option>
+                                <option value="1hwand">Wand</option>
+                            <optgroup label="Two Handers">
+                                <option value="2hsword">Sword</option>
+                                <option value="2hmace">Mace</option>
+                                <option value="2haxe">Axe</option>
+                                <option value="2hpolearm">Polearm</option>
+                                <option value="2hstaff">Staff</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot offHand" name="offHand" id="offHand">
+                            <optgroup label="Off Hands">
+                            <option value="shield">Shield</option>
+                            <option value="heldinoffh">Held in Offhand</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="centerItems" id="characterGrid_right">
+                    <li>
+                        <select class="itemSlot hands" name="hands" id="hands">
+                            <optgroup label="Hands">
+                            <option value="cloth_hands">Cloth</option>
+                            <option value="leather_hands">Leather</option>
+                            <option value="mail_hands">Mail</option>
+                            <option value="plate_hands">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot belt" name="belt" id="belt">
+                            <optgroup label="Belt">
+                            <option value="cloth_belt">Cloth</option>
+                            <option value="leather_belt">Leather</option>
+                            <option value="mail_belt">Mail</option>
+                            <option value="plate_belt">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot legs" name="legs" id="legs">
+                            <optgroup label="Legs">
+                            <option value="cloth_legs">Cloth</option>
+                            <option value="leather_legs">Leather</option>
+                            <option value="mail_legs">Mail</option>
+                            <option value="plate_legs">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot feet" name="feet" id="feet">
+                            <optgroup label="Feet">
+                            <option value="cloth_feet">Cloth</option>
+                            <option value="leather_feet">Leather</option>
+                            <option value="mail_feet">Mail</option>
+                            <option value="plate_feet">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot ring" name="ring" id="ring">
+                            <optgroup label="Rings">
+                            <option value="ring">Ring</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="itemSlot trinket" name="trinket" id="trinket">
+                            <optgroup label="Trinkets">
+                            <option value="trinket">Trinket</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="centerItems" id="results">
+                    <li>Choose an item you wish to find a crafter for!</li>
+                </ul>
+            </nav>
         </section>
     </main>
     <footer></footer>

@@ -65,3 +65,10 @@ button {
     justify-content: center;
     gap: 2px;
 }
+
+#characterItemSlots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
