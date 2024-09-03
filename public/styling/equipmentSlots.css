@@ -1,0 +1,62 @@
+.equipmentSlot {
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.equipmentSlot option, .equipmentSlot optgroup {
+    color: black
+}
+.equipmentSlot::selection, .equipmentSlot:focus, .equipmentSlot:active, .equipmentSlot:hover {
+    border: 2px solid var(--outline-color);
+}
+.head {
+    background-image: url('/public/assets/empty_slots/emptyHead.webp');
+}
+.neck {
+    background-image: url('/public/assets/empty_slots/emptyNeck.webp');
+}
+.shoulder {
+    background-image: url('/public/assets/empty_slots/emptyShoulder.webp');
+}
+.cloak {
+    background-image: url('/public/assets/empty_slots/emptyChest.webp');
+}
+.chest {
+    background-image: url('/public/assets/empty_slots/emptyChest.webp');
+}
+.wrists {
+    background-image: url('/public/assets/empty_slots/emptyWrists.webp');
+}
+.hands {
+    background-image: url('/public/assets/empty_slots/emptyHands.webp');
+}
+.belt {
+    background-image: url('/public/assets/empty_slots/emptyBelt.webp');
+}
+.legs {
+    background-image: url('/public/assets/empty_slots/emptyLegs.webp');
+}
+.feet {
+    background-image: url('/public/assets/empty_slots/emptyFeet.webp');
+}
+.ring {
+    background-image: url('/public/assets/empty_slots/emptyRing.webp');
+}
+.trinket {
+    background-image: url('/public/assets/empty_slots/emptyTrinket.webp');
+}
+.mainHand {
+    background-image: url('/public/assets/empty_slots/emptyMainhand.webp');
+}
+.offHand {
+    background-image: url('/public/assets/empty_slots/emptyOffhand.webp');
+}
