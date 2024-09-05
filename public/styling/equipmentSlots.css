@@ -60,3 +60,6 @@
 .offHand {
     background-image: url('/public/assets/empty_slots/emptyOffhand.webp');
 }
+.misc {
+    background-image: url('/public/assets/empty_slots/emptyBag.webp');
+}

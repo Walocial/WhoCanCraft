@@ -67,32 +67,6 @@
                         </select>
                     </li>
                 </ul>
-                <ul class="centerItems" id="characterGrid_center">
-                    <li>
-                        <select class="equipmentSlot mainHand" name="mainHand" id="mainHand">
-                            <optgroup label="One Handers">
-                                <option value="1hsword">Sword</option>
-                                <option value="1hmace">Mace</option>
-                                <option value="1haxe">Axe</option>
-                                <option value="1hwarglaive">Warglaive</option>
-                                <option value="1hdagger">Dagger</option>
-                                <option value="1hwand">Wand</option>
-                            <optgroup label="Two Handers">
-                                <option value="2hsword">Sword</option>
-                                <option value="2hmace">Mace</option>
-                                <option value="2haxe">Axe</option>
-                                <option value="2hpolearm">Polearm</option>
-                                <option value="2hstaff">Staff</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="equipmentSlot offHand" name="offHand" id="offHand">
-                            <optgroup label="Off Hands">
-                            <option value="shield">Shield</option>
-                            <option value="heldinoffh">Held in Offhand</option>
-                        </select>
-                    </li>
-                </ul>
                 <ul class="centerItems" id="characterGrid_right">
                     <li>
                         <select class="equipmentSlot hands" name="hands" id="hands">
@@ -143,7 +117,44 @@
                         </select>
                     </li>
                 </ul>
-                <ul class="centerItems" id="results">
+                <ul class="centerItems bottomGridRow" id="characterGrid_center">
+                    <li>
+                        <select class="equipmentSlot mainHand" name="mainHand" id="mainHand">
+                            <optgroup label="One Handers">
+                                <option value="1hsword">Sword</option>
+                                <option value="1hmace">Mace</option>
+                                <option value="1haxe">Axe</option>
+                                <option value="1hwarglaive">Warglaive</option>
+                                <option value="1hdagger">Dagger</option>
+                                <option value="1hwand">Wand</option>
+                            <optgroup label="Two Handers">
+                                <option value="2hsword">Sword</option>
+                                <option value="2hmace">Mace</option>
+                                <option value="2haxe">Axe</option>
+                                <option value="2hpolearm">Polearm</option>
+                                <option value="2hstaff">Staff</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="equipmentSlot offHand" name="offHand" id="offHand">
+                            <optgroup label="Off Hands">
+                            <option value="shield">Shield</option>
+                            <option value="heldinoffh">Held in Offhand</option>
+                        </select>
+                    </li>
+                </ul>
+                <div id="miscellaneous" class="centerItems bottomGridRow">
+                    <select class="equipmentSlot misc" name="misc" id="misc">
+                        <optgroup label="Miscellaneous">
+                        <option value="bags">Bags</option>
+                        <option value="crests">Crests</option>
+                        <option value="gems">Gems</option>
+                        <option value="potions">Potions</option>
+                        <option value="treatsies">Treatsies</option>
+                    </select>
+                </div>
+
+                <ul id="results" class="centerItems">
                     <li>Choose an item you wish to find a crafter for!</li>
                 </ul>
             </nav>

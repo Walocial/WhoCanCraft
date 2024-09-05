@@ -29,18 +29,30 @@ button {
 }
 :root,
     :root.default {
-        --text-color: #FFFFFF;
+        --bck-color: #1F202A;
+        --bck-img: url('/public/assets/bck_line_pattern_default.png');
+        --text-color: #fffffff8;
         --text-color-dark: #000000;
         --shadow-color: rgba(0, 0, 0, 0.8);
         --outline-color: magenta;
-}
+    }
+    :root.light_mode {
+        --bck-color: #e6e6e9da;
+        --bck-img: url('/public/assets/bck_line_pattern_light_mode.png');
+        --text-color: #fffffff8;
+        --text-color-dark: #000000;
+        --shadow-color: rgba(0, 0, 0, 0.8);
+        --outline-color: magenta;
+    }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: darkslategray;
+    background-image: var(--bck-img);
+    background-color: var(--bck-color);
+    color: var(--text-color);
 }
 
 header {
@@ -51,13 +63,18 @@ main {
     padding: 2em 4em;
 }
 
+h1 {
+    font-size: 50px;
+    color: goldenrod;
+}
+
 #slotSelector {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: 
     "left results right"
     "left results right"
-    ". center .";
+    ". center misc";
     width: 350px;
 }
 #characterGrid_left {
@@ -73,6 +90,9 @@ main {
 #characterGrid_right {
     grid-area: right;
 }
+#miscellaneous {
+    grid-area: misc;
+}
 
 .centerItems {
     display: flex;
@@ -81,10 +101,28 @@ main {
     justify-content: center;
     gap: 2px;
 }
+.bottomGridRow {
+    padding-top: 2em;
+}
 
-#characterItemSlots {
+#characterEquipmentSlots {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2em;
+}
+
+
+/* --------------------- iPad Version -----------------------*/ 
+@media screen and (width >= 725px) {
+    h1 {
+        font-size: 80px;
+    }
+    #slotSelector {
+        width: 450px;
+    }
+    .equipmentSlot {
+        width: 80px !important;
+        height: 80px !important;
+    }
 }
