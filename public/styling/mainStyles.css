@@ -32,17 +32,17 @@ button {
         --bck-color: #1F202A;
         --bck-img: url('/public/assets/bck_line_pattern_default.png');
         --text-color: #fffffff8;
-        --text-color-dark: #000000;
+        --text-color-alt: #000000;
         --shadow-color: rgba(0, 0, 0, 0.8);
         --outline-color: magenta;
     }
     :root.light_mode {
         --bck-color: #e6e6e9da;
         --bck-img: url('/public/assets/bck_line_pattern_light_mode.png');
-        --text-color: #fffffff8;
-        --text-color-dark: #000000;
+        --text-color: #000000;
+        --text-color-alt: #fffffff8;
         --shadow-color: rgba(0, 0, 0, 0.8);
-        --outline-color: magenta;
+        --outline-color: rgb(131, 14, 131);
     }
 
 body {
@@ -121,7 +121,7 @@ h1 {
     #slotSelector {
         width: 450px;
     }
-    .equipmentSlot {
+    .equipmentSlot { /*Defined in equipmentSlots.css hence the need for !important here*/ 
         width: 80px !important;
         height: 80px !important;
     }

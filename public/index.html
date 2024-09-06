@@ -2,11 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhoCanCraft</title>
 
+    <title>WhoCanCraft</title>
+    <meta name="title" content="WhoCanCraft | A World of Warcraft tool for a guild to see who can craft certain items">
+    <meta name="description" content="WhoCanCraft is an online profession-related tool developed to streamline the user-experience of figuring out what guildie can craft an item for each equipment slot.">
+
+    <!-- Fancy SEO-related meta data -->
+    <meta name="keywords" content="World of warcraft, crafting, professions, equipment slots, profession crafting, wow tool, guild">
+    <link rel="canonical" href="https://tjuulm.dk/whocancraft">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tjuulm.dk/whocancraft">
+    <meta property="og:title" content="WhoCanCraft | A World of Warcraft tool for a guild to see who can craft certain items">
+    <meta property="og:description" content="WhoCanCraft is an online profession-related tool developed to streamline the user-experience of figuring out what guildie can craft an item for each equipment slot.">
+    <meta property="og:image" content= "/assets/whocancraft_v1.3.png">
+
+    <!-- Styling and fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="stylesheet" href="/public/styling/mainStyles.css">
     <link rel="stylesheet" href="/public/styling/equipmentSlots.css">
+    <link rel="icon" href="./media/tjmLogo_default_app.png" type="image/png">
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/public/js/professionDB.js" defer></script>
+    <script src="/public/js/guildMembersDB.js" defer></script>
 </head>
 <body>
     <header>
@@ -127,6 +148,9 @@
                                 <option value="1hwarglaive">Warglaive</option>
                                 <option value="1hdagger">Dagger</option>
                                 <option value="1hwand">Wand</option>
+                                <option value="1hgun">Gun</option>
+                                <option value="1hbow">Bow</option>
+                                <option value="1hcrossbow">Crossbow</option>
                             <optgroup label="Two Handers">
                                 <option value="2hsword">Sword</option>
                                 <option value="2hmace">Mace</option>
