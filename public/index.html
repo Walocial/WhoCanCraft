@@ -2,24 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhoCanCraft</title>
 
+    <title>WhoCanCraft</title>
+    <meta name="title" content="WhoCanCraft | A World of Warcraft tool for a guild to see who can craft certain items">
+    <meta name="description" content="WhoCanCraft is an online profession-related tool developed to streamline the user-experience of figuring out what guildie can craft an item for each equipment slot.">
+
+    <!-- Fancy SEO-related meta data -->
+    <meta name="keywords" content="World of warcraft, crafting, professions, equipment slots, profession crafting, wow tool, guild">
+    <link rel="canonical" href="https://tjuulm.dk/whocancraft">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tjuulm.dk/whocancraft">
+    <meta property="og:title" content="WhoCanCraft | A World of Warcraft tool for a guild to see who can craft certain items">
+    <meta property="og:description" content="WhoCanCraft is an online profession-related tool developed to streamline the user-experience of figuring out what guildie can craft an item for each equipment slot.">
+    <meta property="og:image" content= "/assets/whocancraft_v1.3.png">
+
+    <!-- Styling and fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="stylesheet" href="/public/styling/mainStyles.css">
-    <link rel="stylesheet" href="/public/styling/itemSlots.css">
+    <link rel="stylesheet" href="/public/styling/equipmentSlots.css">
+    <link rel="icon" href="./media/tjmLogo_default_app.png" type="image/png">
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/public/js/professionDB.js" defer></script>
+    <script src="/public/js/guildMembersDB.js" defer></script>
 </head>
 <body>
     <header>
-        <input type="search">
+        <!-- <input type="search"> -->
     </header>
     <main>
         <h1>WhoCanCraft</h1>
-        <section id="characterItemSlots">
-            <h2>What needs crafting?</h2>
+        <section id="characterEquipmentSlots">
+            <h2>Choose an item you wish to find a crafter for!</h2>
             <nav id="slotSelector">
                 <ul class="centerItems" id="characterGrid_left">
                     <li>
-                        <select class="itemSlot head" name="head" id="head">
+                        <select class="equipmentSlot head" name="head" id="head">
                             <optgroup label="Head">
                             <option value="cloth_helm">Cloth</option>
                             <option value="leather_helm">Leather</option>
@@ -28,13 +49,13 @@
                         </select>
                     </li>
                     <li>
-                        <select class="itemSlot neck" name="neck" id="neck">
+                        <select class="equipmentSlot neck" name="neck" id="neck">
                             <optgroup label="Necks">
                             <option value="neck">Neck</option>
                         </select>
                     </li>
                     <li>
-                        <select class="itemSlot shoulder" name="shoulder" id="shoulder">
+                        <select class="equipmentSlot shoulder" name="shoulder" id="shoulder">
                             <optgroup label="Shoulders">
                             <option value="cloth_shoulder">Cloth</option>
                             <option value="leather_shoulder">Leather</option>
@@ -43,13 +64,13 @@
                         </select>
                     </li>
                     <li>
-                        <select class="itemSlot cloak" name="cloak" id="cloak">
+                        <select class="equipmentSlot cloak" name="cloak" id="cloak">
                             <optgroup label="Cloaks">
                             <option value="cloak">Cloak</option>
                         </select>
                     </li>
                     <li>
-                        <select class="itemSlot chest" name="chest" id="chest">
+                        <select class="equipmentSlot chest" name="chest" id="chest">
                             <optgroup label="Chest">
                             <option value="cloth_chest">Cloth</option>
                             <option value="leather_chest">Leather</option>
@@ -58,7 +79,7 @@
                         </select>
                     </li>
                     <li>
-                        <select class="itemSlot wrists" name="wrists" id="wrists">
+                        <select class="equipmentSlot wrists" name="wrists" id="wrists">
                             <optgroup label="Wrists">
                             <option value="cloth_wrists">Cloth</option>
                             <option value="leather_wrists">Leather</option>
@@ -67,9 +88,59 @@
                         </select>
                     </li>
                 </ul>
-                <ul class="centerItems" id="characterGrid_center">
+                <ul class="centerItems" id="characterGrid_right">
                     <li>
-                        <select class="itemSlot mainHand" name="mainHand" id="mainHand">
+                        <select class="equipmentSlot hands" name="hands" id="hands">
+                            <optgroup label="Hands">
+                            <option value="cloth_hands">Cloth</option>
+                            <option value="leather_hands">Leather</option>
+                            <option value="mail_hands">Mail</option>
+                            <option value="plate_hands">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="equipmentSlot belt" name="belt" id="belt">
+                            <optgroup label="Belt">
+                            <option value="cloth_belt">Cloth</option>
+                            <option value="leather_belt">Leather</option>
+                            <option value="mail_belt">Mail</option>
+                            <option value="plate_belt">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="equipmentSlot legs" name="legs" id="legs">
+                            <optgroup label="Legs">
+                            <option value="cloth_legs">Cloth</option>
+                            <option value="leather_legs">Leather</option>
+                            <option value="mail_legs">Mail</option>
+                            <option value="plate_legs">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="equipmentSlot feet" name="feet" id="feet">
+                            <optgroup label="Feet">
+                            <option value="cloth_feet">Cloth</option>
+                            <option value="leather_feet">Leather</option>
+                            <option value="mail_feet">Mail</option>
+                            <option value="plate_feet">Plate</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="equipmentSlot ring" name="ring" id="ring">
+                            <optgroup label="Rings">
+                            <option value="ring">Ring</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="equipmentSlot trinket" name="trinket" id="trinket">
+                            <optgroup label="Trinkets">
+                            <option value="trinket">Trinket</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="centerItems bottomGridRow" id="characterGrid_center">
+                    <li>
+                        <select class="equipmentSlot mainHand" name="mainHand" id="mainHand">
                             <optgroup label="One Handers">
                                 <option value="1hsword">Sword</option>
                                 <option value="1hmace">Mace</option>
@@ -77,6 +148,9 @@
                                 <option value="1hwarglaive">Warglaive</option>
                                 <option value="1hdagger">Dagger</option>
                                 <option value="1hwand">Wand</option>
+                                <option value="1hgun">Gun</option>
+                                <option value="1hbow">Bow</option>
+                                <option value="1hcrossbow">Crossbow</option>
                             <optgroup label="Two Handers">
                                 <option value="2hsword">Sword</option>
                                 <option value="2hmace">Mace</option>
@@ -86,64 +160,28 @@
                         </select>
                     </li>
                     <li>
-                        <select class="itemSlot offHand" name="offHand" id="offHand">
+                        <select class="equipmentSlot offHand" name="offHand" id="offHand">
                             <optgroup label="Off Hands">
                             <option value="shield">Shield</option>
                             <option value="heldinoffh">Held in Offhand</option>
                         </select>
                     </li>
                 </ul>
-                <ul class="centerItems" id="characterGrid_right">
-                    <li>
-                        <select class="itemSlot hands" name="hands" id="hands">
-                            <optgroup label="Hands">
-                            <option value="cloth_hands">Cloth</option>
-                            <option value="leather_hands">Leather</option>
-                            <option value="mail_hands">Mail</option>
-                            <option value="plate_hands">Plate</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="itemSlot belt" name="belt" id="belt">
-                            <optgroup label="Belt">
-                            <option value="cloth_belt">Cloth</option>
-                            <option value="leather_belt">Leather</option>
-                            <option value="mail_belt">Mail</option>
-                            <option value="plate_belt">Plate</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="itemSlot legs" name="legs" id="legs">
-                            <optgroup label="Legs">
-                            <option value="cloth_legs">Cloth</option>
-                            <option value="leather_legs">Leather</option>
-                            <option value="mail_legs">Mail</option>
-                            <option value="plate_legs">Plate</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="itemSlot feet" name="feet" id="feet">
-                            <optgroup label="Feet">
-                            <option value="cloth_feet">Cloth</option>
-                            <option value="leather_feet">Leather</option>
-                            <option value="mail_feet">Mail</option>
-                            <option value="plate_feet">Plate</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="itemSlot ring" name="ring" id="ring">
-                            <optgroup label="Rings">
-                            <option value="ring">Ring</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="itemSlot trinket" name="trinket" id="trinket">
-                            <optgroup label="Trinkets">
-                            <option value="trinket">Trinket</option>
-                        </select>
-                    </li>
-                </ul>
-                <ul class="centerItems" id="results">
+                <div id="miscellaneous" class="centerItems bottomGridRow">
+                    <select class="equipmentSlot misc" name="misc" id="misc">
+                        <optgroup label="Miscellaneous">
+                        <option value="bags">Bags</option>
+                        <option value="cauldrons">Cauldrons</option>
+                        <option value="contracts">Contracts</option>
+                        <option value="crests">Crests</option>
+                        <option value="flasks">Flasks</option>
+                        <option value="gems">Gems</option>
+                        <option value="potions">Potions</option>
+                        <option value="treatsies">Treatsies</option>
+                    </select>
+                </div>
+
+                <ul id="results" class="centerItems">
                     <li>Choose an item you wish to find a crafter for!</li>
                 </ul>
             </nav>
