@@ -9,13 +9,19 @@ class Profession {
         });
     }
 
-    addCraftableItem(slot, itemName, quality, armorType = null) {
+    addCraftableItem(slot, itemName, quality, armorType = null, professionType = null) {
         if (this.slots[slot]) {
             const item = {
                 name: itemName,
                 quality: quality,
                 armortype: armorType || this.defaultArmorType // Use default armor type if not specified
             };
+
+            // Add professionType attribute if the slot is 'bags'
+            if (slot === 'bags' && professionType) {
+                item.professionType = professionType; // Include professionType for bags
+            }
+
             this.slots[slot].push(item);
         } else {
             console.error(`Invalid slot for ${this.name}: ${slot}`);
@@ -29,6 +35,7 @@ let tailoring = new Profession('Tailoring', ['head', 'shoulders', 'chest', 'cloa
 let blacksmithing = new Profession('Blacksmithing', ['head', 'shoulders', 'chest', 'cloak', 'wrists', 'hands', 'belt', 'legs', 'feet', 'mainHand', 'offHand'], 'Plate');
 let leatherworking = new Profession('Leatherworking', ['head', 'shoulders', 'chest', 'belt', 'legs', 'feet']);
 let engineering = new Profession('Engineering', ['mainHand', 'wrists', 'head'])
+let alchemy = new Profession('Alchemy', ['potions', 'flasks', 'cauldrons'])
 
 // Add craftable items for Tailoring
 tailoring.addCraftableItem('head', "Consecrated Hood", 'epic', null)
@@ -58,7 +65,9 @@ tailoring.addCraftableItem('legs', "Pioneer's Perfected Leggings", 'rare', null)
 tailoring.addCraftableItem('feet', "Consecrated Slippers", 'epic', null)
 tailoring.addCraftableItem('feet', "Pioneer's Cloth Slippers", 'rare', null)
 
-tailoring.addCraftableItem('bags', "Pioneer's Cloth Robe", 'rare', null)
+tailoring.addCraftableItem('bags', "Tailor's Bag of Wonders", 'epic', null, 'Tailoring');
+tailoring.addCraftableItem('bags', "Blacksmith's Supply Bag", 'epic', null, 'Blacksmithing');
+tailoring.addCraftableItem('bags', "Herbalist's Bag", 'epic', null, 'Herbalism');
 
 // Add craftable items for Blacksmithing
 blacksmithing.addCraftableItem('mainHand', "Sword of Valor", true, 3);
