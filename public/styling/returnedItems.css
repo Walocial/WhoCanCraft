@@ -1,0 +1,7 @@
+.item {
+    cursor: pointer;
+    transition: 250ms;
+}
+.item:hover {
+    text-decoration: underline;
+}

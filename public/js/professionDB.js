@@ -12,6 +12,7 @@ class Profession {
     addCraftableItem(slot, itemName, quality, armorType = null, professionType = null, bagSlots = null, mainStat = null, isEmbellished = false) {
         if (this.slots[slot]) {
             const item = {
+                slot: slot,
                 name: itemName,
                 quality: quality,
                 armortype: armorType || this.defaultArmorType, // Use default armor type if not specified
@@ -43,8 +44,8 @@ let tailoring = new Profession('Tailoring', ['head', 'shoulders', 'chest', 'cloa
 let leatherworking = new Profession('Leatherworking', ['head', 'shoulders', 'chest', 'cloak', 'wrists', 'hands', 'belt', 'legs', 'feet']);
 let inscription = new Profession('Inscription', ['mainHand', 'offHand', 'treatises']);
 let engineering = new Profession('Engineering', ['mainHand', 'wrists', 'head']);
-let jewelcrafting = new Profession('Jewelcrafting', ['neck', 'ring']);
-let enchanting = new Profession('Enchanting', ['crests']);
+let jewelcrafting = new Profession('Jewelcrafting', ['necks', 'rings']);
+let enchanting = new Profession('Enchanting', ['mainHand', 'crests']);
 let alchemy = new Profession('Alchemy', ['trinkets']);
 
 
@@ -54,8 +55,8 @@ tailoring.addCraftableItem('head', "Consecrated Hood", 'epic', null);
 tailoring.addCraftableItem('head', "Pioneer's Perfected Hood", 'rare', null);
 tailoring.addCraftableItem('shoulders', "Consecrated Mantle", 'epic', null);
 tailoring.addCraftableItem('shoulders', "Pioneer's Perfected Mantle", 'rare', null);
-tailoring.addCraftableItem('cloak', "Consecrated Cloak", 'epic', 'Cloak');
-tailoring.addCraftableItem('cloak', "Pioneer's Perfected Cloak", 'rare', 'Cloak');
+tailoring.addCraftableItem('cloak', "Consecrated Cloak", 'epic', null);
+tailoring.addCraftableItem('cloak', "Pioneer's Perfected Cloak", 'rare', null);
 tailoring.addCraftableItem('chest', "Consecrated Robe", 'epic', null);
 tailoring.addCraftableItem('chest', "Pioneer's Cloth Robe", 'rare', null);
 tailoring.addCraftableItem('wrists', "Warm Sunrise Bracers", 'epic', null);
@@ -76,16 +77,16 @@ tailoring.addCraftableItem('feet', "Consecrated Slippers", 'epic', null);
 tailoring.addCraftableItem('feet', "Pioneer's Cloth Slippers", 'rare', null);
 
 // Bags
-tailoring.addCraftableItem('bags', "The Severed Satchel", 'epic', null, 'Tailoring', 36);
-tailoring.addCraftableItem('bags', "Prodigy's Toolbox", 'epic', null, 'Engineering', 36);
-tailoring.addCraftableItem('bags', 'Magically "Infinite" Messenger', 'epic', null, 'Enchanting', 36);
-tailoring.addCraftableItem('bags', "Jeweler's Purse", 'epic', null, 'Jewelcrafting', 36);
-tailoring.addCraftableItem('bags', "Ignition Satchel", 'epic', null, 'Blacksmithing', 36);
-tailoring.addCraftableItem('bags', "Hideshaper's Workbag", 'epic', null, 'Leatherworking', 36);
-tailoring.addCraftableItem('bags', "Gardener's Seed Satchel", 'epic', null, 'Herbalism', 36);
-tailoring.addCraftableItem('bags', "Excavator's Haversack", 'epic', null, 'Mining', 36);
-tailoring.addCraftableItem('bags', "Darkmoon Duffle", 'epic', null, 'Incsription', 36);
-tailoring.addCraftableItem('bags', "Concoctor's Clutch", 'epic', null, 'Alchemy', 36);
+tailoring.addCraftableItem('bags', "The Severed Satchel", 'epic', 'misc', 'Tailoring', 36);
+tailoring.addCraftableItem('bags', "Prodigy's Toolbox", 'epic', 'misc', 'Engineering', 36);
+tailoring.addCraftableItem('bags', 'Magically "Infinite" Messenger', 'epic', 'misc', 'Enchanting', 36);
+tailoring.addCraftableItem('bags', "Jeweler's Purse", 'epic', 'misc', 'Jewelcrafting', 36);
+tailoring.addCraftableItem('bags', "Ignition Satchel", 'epic', 'misc', 'Blacksmithing', 36);
+tailoring.addCraftableItem('bags', "Hideshaper's Workbag", 'epic', 'misc', 'Leatherworking', 36);
+tailoring.addCraftableItem('bags', "Gardener's Seed Satchel", 'epic', 'misc', 'Herbalism', 36);
+tailoring.addCraftableItem('bags', "Excavator's Haversack", 'epic', 'misc', 'Mining', 36);
+tailoring.addCraftableItem('bags', "Darkmoon Duffle", 'epic', 'misc', 'Incsription', 36);
+tailoring.addCraftableItem('bags', "Concoctor's Clutch", 'epic', 'misc', 'Alchemy', 36);
 
 
 // Add craftable items for Blacksmithing
@@ -187,18 +188,18 @@ leatherworking.addCraftableItem('feet', "Tracker's Chitin Galoshes", 'rare', 'Ma
 
 // Add craftable items for Jewelcrafting
 // Armor
-jewelcrafting.addCraftableItem('neck', "Fractured Gemstone Locket", 'epic', 'Neck', null, null, null, true);
-jewelcrafting.addCraftableItem('neck', "Amulet of Earthen Craftsmanship", 'epic', 'Neck');
-jewelcrafting.addCraftableItem('neck', "Malleable Pendant", 'rare', 'Neck');
-jewelcrafting.addCraftableItem('ring', "Binding of Binding", 'epic', 'Ring', null, null, null, true);
-jewelcrafting.addCraftableItem('ring', "Ring of Earthen Craftsmanship", 'epic', 'Ring');
-jewelcrafting.addCraftableItem('ring', "Malleable Band", 'rare', 'Ring');
+jewelcrafting.addCraftableItem('necks', "Fractured Gemstone Locket", 'epic', 'neck', null, null, null, true);
+jewelcrafting.addCraftableItem('necks', "Amulet of Earthen Craftsmanship", 'epic', 'neck');
+jewelcrafting.addCraftableItem('necks', "Malleable Pendant", 'rare', 'neck');
+jewelcrafting.addCraftableItem('rings', "Binding of Binding", 'epic', 'Ring', null, null, null, true);
+jewelcrafting.addCraftableItem('rings', "Ring of Earthen Craftsmanship", 'epic', 'Ring');
+jewelcrafting.addCraftableItem('rings', "Malleable Band", 'rare', 'Ring');
 
 
 // Add craftable items for Engineering
 // Main Hands
-engineering.addCraftableItem('mainHand', "P.O.W. x2", 'epic', 'Gun', null, null, 'Agility');
-engineering.addCraftableItem('mainHand', "4UT0-41M3R", 'rare', 'Gun', null, null, 'Agility');
+engineering.addCraftableItem('mainHand', "P.O.W. x2", 'epic', '1hgun', null, null, 'Agility');
+engineering.addCraftableItem('mainHand', "4UT0-41M3R", 'rare', '1hgun', null, null, 'Agility');
 
 // Armor
 engineering.addCraftableItem('head', "Studious Brilliance Expeditor", 'epic', 'Cloth');
@@ -217,40 +218,50 @@ engineering.addCraftableItem('wrists', "Clanking Cuffs", 'epic', 'Plate');
 
 // Add craftable items for Inscription
 // Main Hands
-inscription.addCraftableItem('mainHand', "Vagabond's Careful Crutch", 'epic', 'Staff', null, null, 'Agility');
-inscription.addCraftableItem('mainHand', "Vagabond's Bounding Baton", 'epic', 'Staff', null, null, 'Intellect');
-inscription.addCraftableItem('mainHand', "Inquisitor's Crutch", 'rare', 'Staff', null, null, 'Agility');
-inscription.addCraftableItem('mainHand', "Inquisitor's Baton", 'rare', 'Staff', null, null, 'Intellect');
+inscription.addCraftableItem('mainHand', "Vagabond's Careful Crutch", 'epic', '2hstaff', null, null, 'Agility');
+inscription.addCraftableItem('mainHand', "Vagabond's Bounding Baton", 'epic', '2hstaff', null, null, 'Intellect');
+inscription.addCraftableItem('mainHand', "Inquisitor's Crutch", 'rare', '2hstaff', null, null, 'Agility');
+inscription.addCraftableItem('mainHand', "Inquisitor's Baton", 'rare', '2hstaff', null, null, 'Intellect');
 
 // Off Hands
-inscription.addCraftableItem('offHand', "Vagabond's Torch", 'epic', 'Held in Offhand');
-inscription.addCraftableItem('offHand', "Inquisitor's Torch", 'rare', 'Held in Offhand');
+inscription.addCraftableItem('offHand', "Vagabond's Torch", 'epic', 'heldinoffh');
+inscription.addCraftableItem('offHand', "Inquisitor's Torch", 'rare', 'heldinoffh');
 
 // Treatises
-inscription.addCraftableItem('treatises', "Algari Treatise on Tailoring", 'rare', 'Treatsie', 'Tailoring');
-inscription.addCraftableItem('treatises', "Algari Treatise on Skinning", 'rare', 'Treatsie', 'Skinning');
-inscription.addCraftableItem('treatises', "Algari Treatise on Mining", 'rare', 'Treatsie', 'Mining');
-inscription.addCraftableItem('treatises', "Algari Treatise on Leatherworking", 'rare', 'Treatsie', 'Leatherworking');
-inscription.addCraftableItem('treatises', "Algari Treatise on Jewelcrafting", 'rare', 'Treatsie', 'Jewelcrafting');
-inscription.addCraftableItem('treatises', "Algari Treatise on Inscription", 'rare', 'Treatsie', 'Inscription');
-inscription.addCraftableItem('treatises', "Algari Treatise on Herbalism", 'rare', 'Treatsie', 'Herbalism');
-inscription.addCraftableItem('treatises', "Algari Treatise on Engineering", 'rare', 'Treatsie', 'Engineering');
-inscription.addCraftableItem('treatises', "Algari Treatise on Enchanting", 'rare', 'Treatsie', 'Enchanting');
-inscription.addCraftableItem('treatises', "Algari Treatise on Blacksmithing", 'rare', 'Treatsie', 'Blacksmithing');
-inscription.addCraftableItem('treatises', "Algari Treatise on Alchemy", 'rare', 'Treatsie', 'Alchemy');
+inscription.addCraftableItem('treatises', "Algari Treatise on Tailoring", 'rare', 'misc', 'Tailoring');
+inscription.addCraftableItem('treatises', "Algari Treatise on Skinning", 'rare', 'misc', 'Skinning');
+inscription.addCraftableItem('treatises', "Algari Treatise on Mining", 'rare', 'misc', 'Mining');
+inscription.addCraftableItem('treatises', "Algari Treatise on Leatherworking", 'rare', 'misc', 'Leatherworking');
+inscription.addCraftableItem('treatises', "Algari Treatise on Jewelcrafting", 'rare', 'misc', 'Jewelcrafting');
+inscription.addCraftableItem('treatises', "Algari Treatise on Inscription", 'rare', 'misc', 'Inscription');
+inscription.addCraftableItem('treatises', "Algari Treatise on Herbalism", 'rare', 'misc', 'Herbalism');
+inscription.addCraftableItem('treatises', "Algari Treatise on Engineering", 'rare', 'misc', 'Engineering');
+inscription.addCraftableItem('treatises', "Algari Treatise on Enchanting", 'rare', 'misc', 'Enchanting');
+inscription.addCraftableItem('treatises', "Algari Treatise on Blacksmithing", 'rare', 'misc', 'Blacksmithing');
+inscription.addCraftableItem('treatises', "Algari Treatise on Alchemy", 'rare', 'misc', 'Alchemy');
 
 
 // Add craftable items for Enchanting
 // Crests
-enchanting.addCraftableItem('crests', "Enchanted Weathered Harbinger Crest", 'epic');
-enchanting.addCraftableItem('crests', "Enchanted Runed Harbinger Crest", 'epic');
-enchanting.addCraftableItem('crests', "Enchanted Gilded Harbinger Crest", 'epic');
+enchanting.addCraftableItem('crests', "Enchanted Weathered Harbinger Crest", 'epic', 'misc');
+enchanting.addCraftableItem('crests', "Enchanted Runed Harbinger Crest", 'epic', 'misc');
+enchanting.addCraftableItem('crests', "Enchanted Gilded Harbinger Crest", 'epic', 'misc');
+enchanting.addCraftableItem('mainHand', "Scepter of Radiant Magics", 'epic', '1hwand');
+enchanting.addCraftableItem('mainHand', "Enchanted Spearwood Wand", 'rare', '1hwand');
 
 
 // Add craftable items for Alchemy
 // Trinkets
-alchemy.addCraftableItem('trinkets', "Algari Alchemist Stone", 'epic', 'Trinket')
+alchemy.addCraftableItem('trinkets', "Algari Alchemist Stone", 'epic', 'Trinket');
 
-console.log(tailoring);
-console.log(blacksmithing);
-console.log(engineering);
+
+// Aggregating all craftable items from all professions into a single array
+let professions = [blacksmithing, tailoring, leatherworking, inscription, engineering, jewelcrafting, enchanting, alchemy];
+let allCraftableItems = [];
+professions.forEach(profession => {
+    Object.keys(profession.slots).forEach(slot => {
+        allCraftableItems.push(...profession.slots[slot]);
+    });
+});
+
+console.log(allCraftableItems);

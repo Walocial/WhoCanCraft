@@ -23,11 +23,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="stylesheet" href="/public/styling/mainStyles.css">
     <link rel="stylesheet" href="/public/styling/equipmentSlots.css">
+    <link rel="stylesheet" href="/public/styling/returnedItems.css">
     <link rel="icon" href="./assets/favIcon_WhoCanCraft.png" type="image/png">
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/public/js/professionDB.js" defer></script>
     <script src="/public/js/guildMembersDB.js" defer></script>
+    <script src="/public/js/dropdownHandler.js" defer></script>
 </head>
 <body>
     <header>
@@ -42,31 +44,31 @@
                     <li>
                         <select class="equipmentSlot head" name="head" id="head">
                             <optgroup label="Head">
-                            <option value="cloth_helm">Cloth</option>
-                            <option value="leather_helm">Leather</option>
-                            <option value="mail_helm">Mail</option>
-                            <option value="plate_helm">Plate</option>
+                            <option value="cloth_head">Cloth</option>
+                            <option value="leather_head">Leather</option>
+                            <option value="mail_head">Mail</option>
+                            <option value="plate_head">Plate</option>
                         </select>
                     </li>
                     <li>
                         <select class="equipmentSlot neck" name="neck" id="neck">
                             <optgroup label="Necks">
-                            <option value="neck">Neck</option>
+                            <option value="neck_necks">Neck</option>
                         </select>
                     </li>
                     <li>
-                        <select class="equipmentSlot shoulder" name="shoulder" id="shoulder">
+                        <select class="equipmentSlot shoulders" name="shoulders" id="shoulders">
                             <optgroup label="Shoulders">
-                            <option value="cloth_shoulder">Cloth</option>
-                            <option value="leather_shoulder">Leather</option>
-                            <option value="mail_shoulder">Mail</option>
-                            <option value="plate_shoulder">Plate</option>
+                            <option value="cloth_shoulders">Cloth</option>
+                            <option value="leather_shoulders">Leather</option>
+                            <option value="mail_shoulders">Mail</option>
+                            <option value="plate_shoulders">Plate</option>
                         </select>
                     </li>
                     <li>
                         <select class="equipmentSlot cloak" name="cloak" id="cloak">
                             <optgroup label="Cloaks">
-                            <option value="cloak">Cloak</option>
+                            <option value="cloth_cloak">Cloak</option>
                         </select>
                     </li>
                     <li>
@@ -128,13 +130,13 @@
                     <li>
                         <select class="equipmentSlot ring" name="ring" id="ring">
                             <optgroup label="Rings">
-                            <option value="ring">Ring</option>
+                            <option value="ring_rings">Ring</option>
                         </select>
                     </li>
                     <li>
                         <select class="equipmentSlot trinket" name="trinket" id="trinket">
                             <optgroup label="Trinkets">
-                            <option value="trinket">Trinket</option>
+                            <option value="trinket_trinkets">Trinket</option>
                         </select>
                     </li>
                 </ul>
@@ -142,38 +144,36 @@
                     <li>
                         <select class="equipmentSlot mainHand" name="mainHand" id="mainHand">
                             <optgroup label="One Handers">
-                                <option value="1hsword">Sword</option>
-                                <option value="1hmace">Mace</option>
-                                <option value="1haxe">Axe</option>
-                                <option value="1hwarglaive">Warglaive</option>
-                                <option value="1hdagger">Dagger</option>
-                                <option value="1hfistweap">Fist Weapon</option>
-                                <option value="1hwand">Wand</option>
-                                <option value="1hgun">Gun</option>
-                                <option value="1hbow">Bow</option>
-                                <option value="1hcrossbow">Crossbow</option>
+                                <option value="1hsword_mainHand">Sword</option>
+                                <option value="1hmace_mainHand">Mace</option>
+                                <option value="1haxe_mainHand">Axe</option>
+                                <option value="1hwarglaive_mainHand">Warglaive</option>
+                                <option value="1hdagger_mainHand">Dagger</option>
+                                <option value="1hfistweap_mainHand">Fist Weapon</option>
+                                <option value="1hwand_mainHand">Wand</option>
+                                <option value="1hgun_mainHand">Gun</option>
                             <optgroup label="Two Handers">
-                                <option value="2hsword">Sword</option>
-                                <option value="2hmace">Mace</option>
-                                <option value="2haxe">Axe</option>
-                                <option value="2hpolearm">Polearm</option>
-                                <option value="2hstaff">Staff</option>
+                                <option value="2hsword_mainHand">Sword</option>
+                                <option value="2hmace_mainHand">Mace</option>
+                                <option value="2haxe_mainHand">Axe</option>
+                                <option value="2hpolearm_mainHand">Polearm</option>
+                                <option value="2hstaff_mainHand">Staff</option>
                         </select>
                     </li>
                     <li>
                         <select class="equipmentSlot offHand" name="offHand" id="offHand">
                             <optgroup label="Off Hands">
-                            <option value="shield">Shield</option>
-                            <option value="heldinoffh">Held in Offhand</option>
+                            <option value="shield_offHand">Shield</option>
+                            <option value="heldinoffh_offHand">Held in Offhand</option>
                         </select>
                     </li>
                 </ul>
                 <div id="miscellaneous" class="centerItems bottomGridRow">
                     <select class="equipmentSlot misc" name="misc" id="misc">
                         <optgroup label="Miscellaneous">
-                        <option value="bags">Bags</option>
-                        <option value="crests">Crests</option>
-                        <option value="treatises">Treatises</option>
+                        <option value="misc_bags">Bags</option>
+                        <option value="misc_crests">Crests</option>
+                        <option value="misc_treatises">Treatises</option>
                     </select>
                 </div>
 

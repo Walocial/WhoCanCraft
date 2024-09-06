@@ -49,14 +49,14 @@ class GuildMember {
 let member1 = new GuildMember('Walocial', 'Silvermoon', tailoring, engineering);
 let member2 = new GuildMember('Huntste', 'Silvermoon', alchemy, leatherworking);
 
-// Assign what the member can craft and whether they can craft it at max rank
-member1.addCraftableItem(tailoring, 'shoulders', "Pioneer's Perfected Mantle", true); // Can craft at max rank
-member1.addCraftableItem(engineering, 'mainHand', '4UT0-41M3R', true); // Cannot craft at max rank
+// // Assign what the member can craft and whether they can craft it at max rank
+// member1.addCraftableItem(tailoring, 'shoulders', "Pioneer's Perfected Mantle", true); // Can craft at max rank
+// member1.addCraftableItem(engineering, 'mainHand', '4UT0-41M3R', true); // Cannot craft at max rank
 
-// Check if the member can craft specific items
-console.log(member1.canCraft(tailoring, 'shoulders', "Pioneer's Perfected Mantle")); // true
-console.log(member1.canCraftAtMaxRank(tailoring, 'shoulders', "Pioneer's Perfected Mantle")); // true
-console.log(member1.canCraftAtMaxRank(engineering, 'mainHand', '4UT0-41M3R')); // false
+// // Check if the member can craft specific items
+// console.log(member1.canCraft(tailoring, 'shoulders', "Pioneer's Perfected Mantle")); // true
+// console.log(member1.canCraftAtMaxRank(tailoring, 'shoulders', "Pioneer's Perfected Mantle")); // true
+// console.log(member1.canCraftAtMaxRank(engineering, 'mainHand', '4UT0-41M3R')); // false
 
-// Output
-console.log(member1);
+// // Output
+// console.log(member1);

@@ -35,6 +35,10 @@ button {
         --text-color-alt: #000000;
         --shadow-color: rgba(0, 0, 0, 0.8);
         --outline-color: magenta;
+        --epic-color: #a335ee;
+        --rare-color: #0070dd;
+        --uncommon-color: #1eff00;
+        --common-color: #ffffff;
     }
     :root.light_mode {
         --bck-color: #e6e6e9da;
@@ -44,6 +48,13 @@ button {
         --shadow-color: rgba(0, 0, 0, 0.8);
         --outline-color: rgb(131, 14, 131);
     }
+
+.epic {
+    color: var(--epic-color);
+}
+.rare {
+    color: var(--rare-color);
+}
 
 body {
     display: flex;
