@@ -1,4 +1,3 @@
-// Event listener for all dropdowns
 $('.equipmentSlot').each(function() {
     if ($(this).find('option').length > 0) {
         $(this).prepend('<option value="" disabled selected></option>');
@@ -10,10 +9,8 @@ $('.equipmentSlot').change(function () {
     
     if (selectedValue) {
         const [armorType, slot] = selectedValue.split('_');
-
         const filteredItems = filterItemsBySlotAndArmor(slot, armorType);
         displayResults(filteredItems, armorType, slot);
-
         $(this).val('');
     }
 });
@@ -34,59 +31,55 @@ function displayResults(items, armorType, slot) {
     resultsContainer.empty();
     
     function heading() {
-        switch(armorType) {
+        switch (armorType) {
             case 'misc':
                 armorType = '';
-            break;
+                break;
             case '1haxe':
-                return armorType = '1-handed axes';
+                return '1-handed axes';
             case '1hsword':
-                return armorType = '1-handed swords';
+                return '1-handed swords';
             case '1hmace':
-                return armorType = '1-handed maces';
+                return '1-handed maces';
             case '1hwarglaive':
-                return armorType = 'warglaives';
+                return 'warglaives';
             case '1hdagger':
-                return armorType = 'daggers';
+                return 'daggers';
             case '1hwand':
-                return armorType = 'wands';
+                return 'wands';
             case '1hfistweap':
-                return armorType = 'fist weapons';
+                return 'fist weapons';
             case '1hbow':
-                return armorType = 'bows';
+                return 'bows';
             case '1hgun':
-                return armorType = 'guns';
+                return 'guns';
             case '2haxe':
-                return armorType = '2-handed axes';
+                return '2-handed axes';
             case '2hsword':
-                return armorType = '2-handed swords';
+                return '2-handed swords';
             case '2hmace':
-                return armorType = '2-handed maces';
+                return '2-handed maces';
             case '2hpolearm':
-                return armorType = 'polearms';
+                return 'polearms';
             case '2hstaff':
-                return armorType = 'staves';
+                return 'staves';
             case 'heldinoffh':
-                return armorType = 'held in off-hands';
+                return 'held in off-hands';
             case 'shield':
-                return armorType = 'shields';
+                return 'shields';
         }
+
         switch (slot) {
             case 'head':
-                slot = 'helmets';
-                break;
+                return 'helmets';
             case 'feet':
-                slot = 'boots';
-                break;
+                return 'boots';
             case 'chest':
-                slot = 'chests';
-                break;
+                return 'chests';
             case 'belt':
-                slot = 'belts';
-                break;
+                return 'belts';
             case 'hands':
-                slot = 'gloves';
-                break;
+                return 'gloves';
             case 'cloak':
                 return 'cloaks';
             case 'trinkets':
@@ -96,6 +89,7 @@ function displayResults(items, armorType, slot) {
             case 'rings':
                 return 'rings';
         }
+
         return `${armorType} ${slot}`;
     }
 
@@ -104,9 +98,14 @@ function displayResults(items, armorType, slot) {
     } else {
         resultsContainer.append(`<h2>All ${heading()}</h2>`);
         items.forEach(item => {
-
             const qualityClass = `item ${item.quality.toLowerCase()}`;
-            resultsContainer.append(`<li><span class="${qualityClass}">[${item.name}]</span></li>`);
+            resultsContainer.append(`<li><span class="${qualityClass}" data-item-name="${item.name}">[${item.name}]</span></li>`);
         });
     }
 }
+
+
+$('#results').on('click', '.item', function (event) {
+    const clickedItemName = $(this).data('item-name');
+    showItemOverlay(clickedItemName, Guild);
+});

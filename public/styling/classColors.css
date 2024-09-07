@@ -1,0 +1,46 @@
+.playerClass {
+    color: black;
+    font-weight: bold;
+    padding: .2em .6em;
+    border-radius: 10px;
+}
+
+.Mage {
+    background-color: #3FC7EB;
+}
+.Priest {
+    background-color: #ffffff;
+}
+.Hunter {
+    background-color: #AAD372;
+}
+.DeathKnight {
+    background-color: #C41E3A;
+}
+.Monk {
+    background-color: #00FF98;
+}
+.Rogue {
+    background-color: #FFF468;
+}
+.Warrior {
+    background-color: #C69B6D;
+}
+.Warlock {
+    background-color: #8788EE;
+}
+.Druid {
+    background-color: #FF7C0A;
+}
+.Paladin {
+    background-color: #F48CBA;
+}
+.DemonHunter {
+    background-color: #A330C9;
+}
+.Shaman {
+    background-color: #0070DD;
+}
+.Evoker {
+    background-color: #33937F;
+}

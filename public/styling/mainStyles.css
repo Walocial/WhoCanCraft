@@ -29,24 +29,32 @@ button {
 }
 :root,
     :root.default {
+        --title-color: goldenrod;
         --bck-color: #1F202A;
         --bck-img: url('/public/assets/bck_line_pattern_default.png');
         --text-color: #fffffff8;
         --text-color-alt: #000000;
         --shadow-color: rgba(0, 0, 0, 0.8);
         --outline-color: magenta;
-        --epic-color: #a335ee;
-        --rare-color: #0070dd;
-        --uncommon-color: #1eff00;
+        --close-color: crimson;
+        --close-color-alt: firebrick;
+
+        /* Item quality colors */
         --common-color: #ffffff;
+        --uncommon-color: #1eff00;
+        --rare-color: #0070dd;
+        --epic-color: #a335ee;
     }
     :root.light_mode {
+        --title-color: goldenrod;
         --bck-color: #e6e6e9da;
         --bck-img: url('/public/assets/bck_line_pattern_light_mode.png');
         --text-color: #000000;
         --text-color-alt: #fffffff8;
         --shadow-color: rgba(0, 0, 0, 0.8);
         --outline-color: rgb(131, 14, 131);
+        --close-color: firebrick;
+        --close-color-alt: maroon; 
     }
 
 .epic {
@@ -57,6 +65,7 @@ button {
 }
 
 body {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,12 +80,24 @@ header {
 }
 
 main {
-    padding: 2em 4em;
+    padding: 2em .2em;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100dvw;
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 1em;
 }
 
 h1 {
     font-size: 50px;
-    color: goldenrod;
+    color: var(--title-color);
+}
+h2 {
+    padding: 0 .2em;
 }
 
 #slotSelector {
@@ -92,6 +113,9 @@ h1 {
     grid-area: left;
 }
 #results {
+    grid-area: results;
+}
+#itemOverlay {
     grid-area: results;
 }
 #characterGrid_center {
@@ -123,6 +147,57 @@ h1 {
     gap: 2em;
 }
 
+.item {
+    cursor: pointer;
+    transition: 250ms;
+}
+.item:hover {
+    text-decoration: underline;
+}
+option[value=""] {
+    display: none;
+}
+
+.item_Overlay {
+    position: relative;
+    background-color: var(--bck-color);
+    width: 100%;
+    height: 100%;
+    padding: 2em 5px;
+    border-radius: 10px;
+    outline: 4px solid transparent;
+    z-index: 1000;
+}
+.item_Overlay_Content {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+#closeOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+#closeOverlay:hover, #closeOverlay:focus, #closeOverlay:active {
+    outline: 2px solid var(--close-color-alt);
+    color: var(--close-color);
+}
+#item_Name {
+    margin: 0 0 1em 0;
+}
+#crafter_List>li {
+    padding: 0 0 .4em .1em;
+    text-align: left;
+}
+
 
 /* --------------------- iPad Version -----------------------*/ 
 @media screen and (width >= 725px) {
@@ -136,4 +211,10 @@ h1 {
         width: 80px !important;
         height: 80px !important;
     }
+
+    #crafter_List>li {
+        padding: 0 0 .6em .6emem;
+        text-align: left;
+    }
+    
 }

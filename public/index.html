@@ -23,13 +23,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="stylesheet" href="/public/styling/mainStyles.css">
     <link rel="stylesheet" href="/public/styling/equipmentSlots.css">
-    <link rel="stylesheet" href="/public/styling/returnedItems.css">
+    <link rel="stylesheet" href="/public/styling/classColors.css">
     <link rel="icon" href="./assets/favIcon_WhoCanCraft.png" type="image/png">
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/public/js/professionDB.js" defer></script>
     <script src="/public/js/guildMembersDB.js" defer></script>
     <script src="/public/js/dropdownHandler.js" defer></script>
+    <script src="/public/js/toggleOverlay.js" defer></script>
 </head>
 <body>
     <header>
@@ -39,7 +40,7 @@
         <h1>WhoCanCraft</h1>
         <section id="characterEquipmentSlots">
             <h2>Choose an item you wish to find a crafter for!</h2>
-            <nav id="slotSelector">
+            <article id="slotSelector">
                 <ul class="centerItems" id="characterGrid_left">
                     <li>
                         <select class="equipmentSlot head" name="head" id="head">
@@ -180,9 +181,26 @@
                 <ul id="results" class="centerItems">
                     <li>Choose an item you wish to find a crafter for!</li>
                 </ul>
-            </nav>
+
+                <aside id="itemOverlay" class="item_Overlay hidden">
+                    <div class="item_Overlay_Content">
+                        <i class="fas fa-x" id="closeOverlay" title="Close item info" tabindex="0"></i>
+                        <h2 id="item_Title">Item Details</h2>
+                        <p id="item_Details"></p>
+                        <h3 id="item_Name">[itemname]</h3>
+                        <h4>Who Can Craft:</h4>
+                        <ul id="crafter_List">
+                        </ul>
+                    </div>
+                </aside>
+            </article>
+
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footerInfo">
+            <p>v.2.5</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -83,6 +83,7 @@ tailoring.addCraftableItem('bags', 'Magically "Infinite" Messenger', 'epic', 'mi
 tailoring.addCraftableItem('bags', "Jeweler's Purse", 'epic', 'misc', 'Jewelcrafting', 36);
 tailoring.addCraftableItem('bags', "Ignition Satchel", 'epic', 'misc', 'Blacksmithing', 36);
 tailoring.addCraftableItem('bags', "Hideshaper's Workbag", 'epic', 'misc', 'Leatherworking', 36);
+tailoring.addCraftableItem('bags', "Hideshaper's Tote", 'epic', 'misc', 'Skinning', 36);
 tailoring.addCraftableItem('bags', "Gardener's Seed Satchel", 'epic', 'misc', 'Herbalism', 36);
 tailoring.addCraftableItem('bags', "Excavator's Haversack", 'epic', 'misc', 'Mining', 36);
 tailoring.addCraftableItem('bags', "Darkmoon Duffle", 'epic', 'misc', 'Incsription', 36);
