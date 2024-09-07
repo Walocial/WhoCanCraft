@@ -37,11 +37,11 @@ function showItemOverlay(itemName, guild) {
         }
 
         switch (slot) {
-            case 'head': return `${armorType} helm`;
-            case 'feet': return `${armorType} boots`;
-            case 'chest': return `${armorType} chest`;
-            case 'belt': return `${armorType} belt`;
-            case 'hands': return `${armorType} gloves`;
+            case 'head': return `${capitalizeFirstLetter(armorType)} helm`;
+            case 'feet': return `${capitalizeFirstLetter(armorType)} boots`;
+            case 'chest': return `${capitalizeFirstLetter(armorType)} chest`;
+            case 'belt': return `${capitalizeFirstLetter(armorType)} belt`;
+            case 'hands': return `${capitalizeFirstLetter(armorType)} gloves`;
             case 'cloak': return 'Cloak';
             case 'trinkets': return 'Trinket';
             case 'necks': return 'Nekc';
