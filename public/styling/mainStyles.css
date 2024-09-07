@@ -89,7 +89,21 @@ footer {
     width: 100dvw;
     display: flex;
     justify-content: space-between;
-    padding: .5em 1em;
+    padding: 1em;
+}
+.footerInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.footerInfo>p:last-of-type, .footerInfo>p>a {
+    color: rgba(255, 255, 255, 0.5);
+}
+.footerInfo>p>a:hover, .footerInfo>p>a:focus, .footerInfo>p>a:active {
+    color: var(--text-color);
+    border-bottom: 2px solid limegreen;
+    outline: none;
 }
 
 h1 {
