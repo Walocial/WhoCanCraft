@@ -1,10 +1,21 @@
+// Event listener for all dropdowns
+$('.equipmentSlot').each(function() {
+    if ($(this).find('option').length > 0) {
+        $(this).prepend('<option value="" disabled selected></option>');
+    }
+});
+
 $('.equipmentSlot').change(function () {
     const selectedValue = $(this).val();
-    const [armorType, slot] = selectedValue.split('_');
+    
+    if (selectedValue) {
+        const [armorType, slot] = selectedValue.split('_');
 
-    const filteredItems = filterItemsBySlotAndArmor(slot, armorType);
-    displayResults(filteredItems, armorType, slot);
+        const filteredItems = filterItemsBySlotAndArmor(slot, armorType);
+        displayResults(filteredItems, armorType, slot);
 
+        $(this).val('');
+    }
 });
 
 function filterItemsBySlotAndArmor(slot, armorType) {
@@ -76,6 +87,14 @@ function displayResults(items, armorType, slot) {
             case 'hands':
                 slot = 'gloves';
                 break;
+            case 'cloak':
+                return 'cloaks';
+            case 'trinkets':
+                return 'trinkets';
+            case 'necks':
+                return 'necks';
+            case 'rings':
+                return 'rings';
         }
         return `${armorType} ${slot}`;
     }

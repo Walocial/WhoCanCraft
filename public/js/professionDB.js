@@ -39,9 +39,9 @@ class Profession {
 
 
 //Initializing each profession:
-let blacksmithing = new Profession('Blacksmithing', ['head', 'shoulders', 'chest', 'cloak', 'wrists', 'hands', 'belt', 'legs', 'feet', 'mainHand', 'offHand'], 'Plate');
+let blacksmithing = new Profession('Blacksmithing', ['head', 'shoulders', 'chest', 'wrists', 'hands', 'belt', 'legs', 'feet', 'mainHand', 'offHand'], 'Plate');
 let tailoring = new Profession('Tailoring', ['head', 'shoulders', 'chest', 'cloak', 'wrists', 'hands', 'belt', 'legs', 'feet', 'bags'], 'Cloth');
-let leatherworking = new Profession('Leatherworking', ['head', 'shoulders', 'chest', 'cloak', 'wrists', 'hands', 'belt', 'legs', 'feet']);
+let leatherworking = new Profession('Leatherworking', ['head', 'shoulders', 'chest', 'wrists', 'hands', 'belt', 'legs', 'feet']);
 let inscription = new Profession('Inscription', ['mainHand', 'offHand', 'treatises']);
 let engineering = new Profession('Engineering', ['mainHand', 'wrists', 'head']);
 let jewelcrafting = new Profession('Jewelcrafting', ['necks', 'rings']);

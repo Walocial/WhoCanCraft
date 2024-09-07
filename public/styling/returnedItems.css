@@ -5,3 +5,6 @@
 .item:hover {
     text-decoration: underline;
 }
+option[value=""] {
+    display: none;
+}
