@@ -155,5 +155,5 @@ member10.addCraftableItem(enchanting, 'crests', "Enchanted Weathered Harbinger C
 member10.addCraftableItem(enchanting, 'crests', "Enchanted Runed Harbinger Crest", true);
 member10.addCraftableItem(enchanting, 'crests', "Enchanted Gilded Harbinger Crest", true);
 
-const Guild = [member0, member1, member2, member2_1, member3, member4, member5, member6, member7, member8, member9, member10];
+const Guild = [member0, member1, member2, member2_1, member3, member4, member5, member6, member7, member8, member8_1, member9, member10];
 console.log(Guild);
