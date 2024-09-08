@@ -96,7 +96,7 @@ function displayResults(items, armorType, slot) {
     if (items.length === 0) {
         resultsContainer.append(`<h2>No items found for ${armorType} ${slot}</h2>`);
     } else {
-        resultsContainer.append(`<h2>All ${heading()}</h2>`);
+        resultsContainer.append(`<h2 id="ulHeading">All ${heading()}</h2>`);
         items.forEach(item => {
             const qualityClass = `item ${item.quality.toLowerCase()}`;
             resultsContainer.append(`<li><span class="${qualityClass}" data-item-name="${item.name}">[${item.name}]</span></li>`);

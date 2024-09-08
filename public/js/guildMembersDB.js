@@ -49,14 +49,18 @@ const DEFAULTREALM = 'Silvermoon';
 
 // Create a guild member
 let member0 = new GuildMember('Walocial', DEFAULTREALM, 'Warlock', tailoring, engineering);
-let member1 = new GuildMember('Huntste', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
-let member2 = new GuildMember('Curris', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
-let member3 = new GuildMember('Azogal', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
-let member4 = new GuildMember('Zckr', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
-let member5 = new GuildMember('Namirin', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
-let member6 = new GuildMember('Faovoker', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
-let member7 = new GuildMember('Cheekyvaffel', DEFAULTREALM, 'Warlock', alchemy, leatherworking);
+let member1 = new GuildMember('Huntste', DEFAULTREALM, 'Hunter', leatherworking, alchemy);
+let member2 = new GuildMember('Curris', DEFAULTREALM, 'Evoker', leatherworking, enchanting);
+let member2_1 = new GuildMember('Currism', DEFAULTREALM, 'Mage', inscription, null)
+let member3 = new GuildMember('Azogal', DEFAULTREALM, 'Warrior', blacksmithing, null);
+let member4 = new GuildMember('Zckr', DEFAULTREALM, 'Rogue', leatherworking, null);
+let member5 = new GuildMember('Namirin', DEFAULTREALM, 'Rogue', leatherworking, null);
+let member6 = new GuildMember('Faovoker', DEFAULTREALM, 'Evoker', jewelcrafting, null);
+let member7 = new GuildMember('Cheekyvaffel', DEFAULTREALM, 'Priest', jewelcrafting, null);
 let member8 = new GuildMember('Dieza', 'Draenor', 'Warlock', tailoring, null);
+let member8_1 = new GuildMember('Lildieza', DEFAULTREALM, 'Priest', enchanting, null);
+let member9 = new GuildMember('Kvitdrage', DEFAULTREALM, 'Evoker', enchanting, null);
+let member10 = new GuildMember('Hinabel', DEFAULTREALM, 'Monk', enchanting, null);
 
 //Walocial
 member0.addCraftableItem(tailoring, 'head', "Consecrated Hood", true);
@@ -72,11 +76,84 @@ member0.addCraftableItem(tailoring, 'bags', "Jeweler's Purse", true);
 member0.addCraftableItem(tailoring, 'bags', "Ignition Satchel", true);
 member0.addCraftableItem(tailoring, 'bags', "Hideshaper's Tote", true);
 
-member0.addCraftableItem(engineering, 'mainHand', '4UT0-41M3R', true);
+member0.addCraftableItem(engineering, 'mainHand', "4UT0-41M3R", true);
+member0.addCraftableItem(engineering, 'mainHand', "P.O.W. x2", true);
 
-// Check if the member can craft specific items
-console.log(member0.name, member0.canCraftAtMaxRank(tailoring, 'head', "Consecrated Hood"));
-console.log(member0.name, member0.canCraftAtMaxRank(engineering, 'mainHand', '4UT0-41M3R'));
 
-const Guild = [member0, member1, member2, member3, member4, member5, member6, member7, member8];
+//Huntste
+member1.addCraftableItem(leatherworking, 'feet', "Glyph-Etched Stompers", true);
+member1.addCraftableItem(leatherworking, 'feet', "Tracker's Chitin Galoshes", true);
+member1.addCraftableItem(leatherworking, 'hands', "Glyph-Etched Gauntlets", true);
+member1.addCraftableItem(leatherworking, 'hands', "Tracker's Toughened Handguards", true);
+
+//Curris
+member2.addCraftableItem(leatherworking, 'wrists', "Glyph-Etched Vambraces", true);
+member2.addCraftableItem(leatherworking, 'wrists', "Tracker's Chitin Cuffs", true);
+member2.addCraftableItem(leatherworking, 'belt', "Glyph-Etched Binding", true);
+member2.addCraftableItem(leatherworking, 'belt', "Tracker's Toughened Girdle", true);
+member2.addCraftableItem(leatherworking, 'legs', "Glyph-Etched Cuisses", true);
+member2.addCraftableItem(leatherworking, 'legs', "Tracker's Toughened Links", true);
+member2.addCraftableItem(enchanting, 'crests', "Enchanted Weathered Harbinger Crest", true);
+member2.addCraftableItem(enchanting, 'crests', "Enchanted Runed Harbinger Crest", true);
+member2.addCraftableItem(enchanting, 'crests', "Enchanted Gilded Harbinger Crest", true);
+//Currism
+member2_1.addCraftableItem(inscription, 'mainHand', "Vagabond's Careful Crutch", true);
+member2_1.addCraftableItem(inscription, 'mainHand', "Vagabond's Bounding Baton", true);
+member2_1.addCraftableItem(inscription, 'mainHand', "Inquisitor's Crutch", true);   
+member2_1.addCraftableItem(inscription, 'mainHand', "Inquisitor's Baton", true);
+member2_1.addCraftableItem(inscription, 'offHand', "Vagabond's Torch", true);
+member2_1.addCraftableItem(inscription, 'offHand', "Inquisitor's Torch", true);
+
+//Azogal
+member3.addCraftableItem(blacksmithing, 'mainHand', "Charged Slicer", true);
+member3.addCraftableItem(blacksmithing, 'mainHand', "Charged Runeaxe", true);
+member3.addCraftableItem(blacksmithing, 'mainHand', "Ironclaw Axe", true);
+
+//Zckr
+member4.addCraftableItem(leatherworking, 'belt', "Rune-Branded Waistband", true);
+member4.addCraftableItem(leatherworking, 'belt', "Spelunker's Practiced Sash", true);
+member4.addCraftableItem(leatherworking, 'hands', "Rune-Branded Grasps", true);
+member4.addCraftableItem(leatherworking, 'hands', "Spelunker's Practiced Mitts", true);
+member4.addCraftableItem(leatherworking, 'legs', "Rune-Branded Legwraps", true);
+member4.addCraftableItem(leatherworking, 'legs', "Spelunker's Practiced Britches", true);
+
+//Namirin
+member5.addCraftableItem(leatherworking, 'wrists', "Rune-Branded Armbands", true);
+member5.addCraftableItem(leatherworking, 'wrists', "Spelunker's Leather Bands", true);
+member5.addCraftableItem(leatherworking, 'feet', "Rune-Branded Kickers", true);
+member5.addCraftableItem(leatherworking, 'feet', "Spelunker's Leather Footpads", true);
+
+//Faovoker
+member6.addCraftableItem(jewelcrafting, 'necks', "Amulet of Earthen Craftsmanship", true);
+member6.addCraftableItem(jewelcrafting, 'necks', "Malleable Pendant", true);
+member6.addCraftableItem(jewelcrafting, 'rings', "Ring of Earthen Craftsmanship", true);
+member6.addCraftableItem(jewelcrafting, 'rings', "Malleable Band", true);
+
+//Cheekyvaffel
+member7.addCraftableItem(jewelcrafting, 'necks', "Amulet of Earthen Craftsmanship", true);
+member7.addCraftableItem(jewelcrafting, 'necks', "Malleable Pendant", true);
+member7.addCraftableItem(jewelcrafting, 'rings', "Ring of Earthen Craftsmanship", true);
+member7.addCraftableItem(jewelcrafting, 'rings', "Malleable Band", true);
+
+//Dieza
+member8.addCraftableItem(tailoring, 'wrists', "Consecrated Cuffs", true);
+member8.addCraftableItem(tailoring, 'wrists', "Pioneer's Cloth Cuffs", true);
+member8.addCraftableItem(tailoring, 'belt', "Consecrated Cord", true);
+member8.addCraftableItem(tailoring, 'belt', "Pioneer's Perfected Cord", true);
+//Lildieza
+member8_1.addCraftableItem(enchanting, 'crests', "Enchanted Weathered Harbinger Crest", true);
+member8_1.addCraftableItem(enchanting, 'crests', "Enchanted Runed Harbinger Crest", true);
+member8_1.addCraftableItem(enchanting, 'crests', "Enchanted Gilded Harbinger Crest", true);
+
+//Kvitdrage
+member9.addCraftableItem(enchanting, 'crests', "Enchanted Weathered Harbinger Crest", true);
+member9.addCraftableItem(enchanting, 'crests', "Enchanted Runed Harbinger Crest", true);
+member9.addCraftableItem(enchanting, 'crests', "Enchanted Gilded Harbinger Crest", true);
+
+//Hinabel
+member10.addCraftableItem(enchanting, 'crests', "Enchanted Weathered Harbinger Crest", true);
+member10.addCraftableItem(enchanting, 'crests', "Enchanted Runed Harbinger Crest", true);
+member10.addCraftableItem(enchanting, 'crests', "Enchanted Gilded Harbinger Crest", true);
+
+const Guild = [member0, member1, member2, member2_1, member3, member4, member5, member6, member7, member8, member9, member10];
 console.log(Guild);

@@ -44,9 +44,9 @@ function showItemOverlay(itemName, guild) {
             case 'hands': return `${capitalizeFirstLetter(armorType)} gloves`;
             case 'cloak': return 'Cloak';
             case 'trinkets': return 'Trinket';
-            case 'necks': return 'Nekc';
+            case 'necks': return 'Neck';
             case 'rings': return 'Ring';
-            default: return `${armorType} ${slot}`;
+            default: return `${capitalizeFirstLetter(armorType)} ${slot}`;
         }
     }
 
@@ -69,11 +69,11 @@ function showItemOverlay(itemName, guild) {
         crafters.forEach(member => {
             function showRealmIfNotDefault() {
                 if(member.realm != DEFAULTREALM){
-                    return member.realm;
+                    return `- ${member.realm}`;
                 }
                 return '';
             }
-            crafterListElement.append(`<li><span class="playerClass ${member.playerClass}">${member.name}</span> ${showRealmIfNotDefault()}</li>`);
+            crafterListElement.append(`<li><span class="playerClass ${member.playerClass}">${member.name} ${showRealmIfNotDefault()}</span></li>`);
         });
     } else {
         crafterListElement.append('<li>No guild members can craft this item yet</li>');
