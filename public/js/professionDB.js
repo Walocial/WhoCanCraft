@@ -79,7 +79,7 @@ tailoring.addCraftableItem('feet', "Pioneer's Cloth Slippers", 'rare', null);
 // Bags
 tailoring.addCraftableItem('bags', "The Severed Satchel", 'epic', 'misc', 'Tailoring', 36);
 tailoring.addCraftableItem('bags', "Prodigy's Toolbox", 'epic', 'misc', 'Engineering', 36);
-tailoring.addCraftableItem('bags', 'Magically "Infinite" Messenger', 'epic', 'misc', 'Enchanting', 36);
+tailoring.addCraftableItem('bags', "Magically Infinite Messenger", 'epic', 'misc', 'Enchanting', 36);
 tailoring.addCraftableItem('bags', "Jeweler's Purse", 'epic', 'misc', 'Jewelcrafting', 36);
 tailoring.addCraftableItem('bags', "Ignition Satchel", 'epic', 'misc', 'Blacksmithing', 36);
 tailoring.addCraftableItem('bags', "Hideshaper's Workbag", 'epic', 'misc', 'Leatherworking', 36);
